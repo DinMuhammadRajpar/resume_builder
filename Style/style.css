@@ -56,13 +56,12 @@ h4 {
 }
 
 .contact {
-  max-width: 80rem;
-  margin: 1rem auto;
   display: flex;
-  gap: 5rem;
-  /* border: 2px solid black; */
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 2rem;
+  margin-top: 2rem;
   background-color: #f1f1f1;
-  padding: 2rem 15rem;
 }
 
 i {
@@ -77,4 +76,20 @@ ul {
 
 section {
   padding: 2rem 0rem;
+}
+
+
+
+@media (max-width: 768px) {
+  body {
+      margin: 0.5rem;
+  }
+  .contact {
+      gap: 1rem;
+      padding: 1rem;
+  }
+  .picture img {
+      height: 7rem;
+      width: 7rem;
+  }
 }
