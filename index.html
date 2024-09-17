@@ -22,140 +22,265 @@
 </head>
 
 <body>
-    <section class="personal_information">
-        <!-- <h1>Personal Information</h1> -->
-        <button class="toggle-button">&#9650</button>
-        <article>
-            <div class="upper_side_PI">
-                <div class="picture">
-                    <img src="Assets/piccc.jpg" alt="" />
-                </div>
-                <div>
-                    <div class="name">
-                        <h2>Din Muhammad <small>Developer</small></h2>
-                    </div>
-                    <div class="intro">
-                        <p>
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id
-                            placeat enim dolores harum et corrupti eligendi nihil, ipsa
-                            excepturi aspernatur dolor neque quis maxime exercitationem
-                            aperiam explicabo veniam non cumque ipsum rerum nisi sit facere?
-                            Quasi minus tenetur qui? Deleniti tenetur perferendis id
-                            provident.
-                        </p>
-                    </div>
-                </div>
+
+    <div id="resume_controls">
+        <div>
+            <button id="generate_url_btn">Toggle Resume URL</button>
+            <div id="resume_url_section">
+                <p id="resume_url_display">URL display</p>
             </div>
-            <div class="contact">
-                <div class="email">
-                    <i class="fa-solid fa-envelope"></i>
-                    <span>dinmuhammad@gmail.com</span>
-                </div>
-                <div class="contact_number">
-                    <i class="fa-solid fa-phone"></i>
-                    <span>03355522277</span>
-                </div>
-                <div class="linkedIn">
-                    <i class="fa-brands fa-linkedin"></i>
-                    <span>linkedin.com/dinmuhammadrajpar</span>
-                </div>
+        </div>
+        <div>
+            <button id="show_resume_btn">Resume</button>
+            <button id="edit_resume_btn">Edit</button>
+            <button id="download_pdf_btn">Download</button>
+        </div>
+    </div>
+
+
+
+    <section id="form_section">
+        <form id="resume_form">
+
+            <h1>Resume Builder</h1>
+
+            <div>
+                <legend>Personal Information</legend>
+
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="additionalName">Addition to Name:</label>
+                <input type="text" id="additionalName" name="additionalName" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="contactNumber">Your contact number:</label>
+                <input type="number" id="contactNumber" name="contactNumber" required>
+
+                <label for="linkedIn">Social Acc:</label>
+                <input type="text" id="linkedIn" name="linkedIn" required>
+
+                <label for="intro">Tell us about yourself:</label>
+                <textarea name="intro" id="intro" required></textarea>
+
+                <legend>Education</legend>
+                <label for="degree">Degree:</label>
+                <input type="text" id="degree" name="degree" required>
+
+                <label for="institute">Institute:</label>
+                <input type="text" id="institute" name="institute" required>
+
+                <label for="edu-start-date">Start Date:</label>
+                <input type="date" id="edu-start-date" name="edu-start-date" required>
+
+                <label for="edu-end-date">End Date:</label>
+                <input type="date" id="edu-end-date" name="edu-end-date" required>
+
+                <label for="courses">Courses (comma-separated):</label>
+                <input type="text" id="courses" name="courses" required>
+
+
+
+
+                <legend>Work Experience</legend>
+                <label for="job-title">Job Title:</label>
+                <input type="text" id="job-title" name="job-title" required>
+                <label for="company">Company:</label>
+                <input type="text" id="company" name="company" required>
+                <label for="work-start-date">Start Date:</label>
+                <input type="date" id="work-start-date" name="work-start-date" required>
+                <label for="work-end-date">End Date:</label>
+                <input type="date" id="work-end-date" name="work-end-date" required>
+
+
+                <!-- <i class="fa-solid fa-circle-plus" id="add_experience_btn"></i> -->
+
+                <legend>Skills</legend>
+                <label for="skills">Skills (comma-separated):</label>
+                <input type="text" id="skills" name="skills" required>
+
+                <label for="profile_picture">Profile Picture:</label>
+                <input type="file" id="profile_picture" accept="image/*">
+
+                <button type="submit" class="submit-button">Generate Resume</button>
+
             </div>
-        </article>
-        
+
+
+        </form>
     </section>
 
-    <hr />
 
-    <section class="education">
-        <h2>Education</h2>
-        <button class="toggle-button">&#9650;</button>
-        <article>
-            <div class="details">
-                <h3>Computer Science</h3>
-                <h4>Iqra University</h4>
-                <p class="degree_date">
-                    <time datetime="2018-09">2018/09</time> -
-                    <time datetime="2022-05">2022/05</time>
-                </p>
-                <div class="courses">
-                    <h6>Courses</h6>
+    <section id="resume_section">
+
+        <section class="personal_information" id="dynamic-resume">
+            <i class="fa-solid fa-caret-down toggle_btn rotation"></i>
+            <article>
+                <div class="upper_side_PI">
+                    <div class="picture profile_picture">
+                        <img id="resume_profile_picture" src="Assets/piccc.jpg" alt="" />
+                    </div>
                     <div>
+                        <div class="name editable">
+                            <h2 id="name">Din Muhammad</h2>
+                            <p>Developer</p>
+                        </div>
+                        <div class="intro">
+                            <p>
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id
+                                placeat enim dolores harum et corrupti eligendi nihil, ipsa
+                                excepturi aspernatur dolor neque quis maxime exercitationem
+                                aperiam explicabo veniam non cumque ipsum rerum nisi sit facere?
+                                Quasi minus tenetur qui? Deleniti tenetur perferendis id
+                                provident.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact">
+                    <div class="email">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>dinmuhammad@gmail.com</span>
+                    </div>
+                    <div class="contact_number">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>03355522277</span>
+                    </div>
+                    <div class="linkedIn">
+                        <i class="fa-brands fa-linkedin"></i>
+                        <span>linkedin.com/dinmuhammadrajpar</span>
+                    </div>
+                </div>
+            </article>
+
+        </section>
+
+        <hr />
+
+        <section class="education">
+            <h2>Education</h2>
+            <!-- <button class="toggle-button">&#9650;</button> -->
+            <i class="fa-solid fa-caret-down toggle_btn rotation"></i>
+            <article>
+                <div class="details">
+                    <h3>Computer Science</h3>
+                    <h4>Iqra University</h4>
+                    <p class="degree_date">
+                        <time datetime="2018-09">2018/09</time> -
+                        <time datetime="2022-05">2022/05</time>
+                    </p>
+                    <div class="courses">
+                        <h6>Courses</h6>
+                        <div>
+                            <ul>
+                                <li>
+                                    <p>Course 1</p>
+                                </li>
+                                <li>
+                                    <p>Course 2</p>
+                                </li>
+                                <li>
+                                    <p>Course 3</p>
+                                </li>
+                                <li>
+                                    <p>Course 4</p>
+                                </li>
+                                <li>
+                                    <p>Course 5</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+        </section>
+
+        <hr />
+
+        <section class="experience">
+            <h2>Work Experience</h2>
+            <!-- <button class="toggle-button">&#9650;</button> -->
+            <i class="fa-solid fa-caret-down toggle_btn rotation"></i>
+            <article>
+                <div class="details">
+                    <h3>Role</h3>
+                    <h4>Company Name</h4>
+                    <p class="work_date">
+                        <time datetime="2018-09">2018/09</time> -
+                        <time datetime="2022-05">2022/05</time>
+                    </p>
+                    <div class="tasks">
+                        <h6>Achievements/Tasks</h6>
                         <ul>
                             <li>
-                                <p>Course 1</p>
+                                <p>Achievement/Task 1</p>
                             </li>
                             <li>
-                                <p>Course 2</p>
+                                <p>Achievement/Task 2</p>
                             </li>
                             <li>
-                                <p>Course 3</p>
+                                <p>Achievement/Task 3</p>
                             </li>
                             <li>
-                                <p>Course 4</p>
+                                <p>Achievement/Task 4</p>
                             </li>
                             <li>
-                                <p>Course 5</p>
+                                <p>Achievement/Task 5</p>
                             </li>
                         </ul>
                     </div>
                 </div>
-            </div>
-        </article>
-        
-    </section>
+            </article>
+        </section>
 
-    <hr />
+        <hr />
 
-    <section class="experience">
-        <h2>Work Experience</h2>
-        <button class="toggle-button">&#9650;</button>
-        <article>
-            <div class="details">
-                <h3>Role</h3>
-                <h4>Company Name</h4>
-                <p class="work_date">
-                    <time datetime="2018-09">2018/09</time> -
-                    <time datetime="2022-05">2022/05</time>
-                </p>
-                <div class="tasks">
-                    <h6>Achievements/Tasks</h6>
-                    <ul>
-                        <li>
-                            <p>Achievement/Task 1</p>
-                        </li>
-                        <li>
-                            <p>Achievement/Task 2</p>
-                        </li>
-                        <li>
-                            <p>Achievement/Task 3</p>
-                        </li>
-                        <li>
-                            <p>Achievement/Task 4</p>
-                        </li>
-                        <li>
-                            <p>Achievement/Task 5</p>
-                        </li>
-                    </ul>
+        <section class="skills">
+            <h2>Skills</h2>
+            <!-- <i class="fa-solid fa-circle-dot toggle-button"></i> -->
+            <!-- <button class="toggle-button">&#9650;</button> -->
+            <i class="fa-solid fa-caret-down toggle_btn rotation"></i>
+            <article>
+                <div>
+                    <h5>skill 1</h5>
+                    <h5>skill 2</h5>
+                    <h5>skill 3</h5>
+                    <h5>skill 4</h5>
                 </div>
-            </div>
-        </article>
-    </section>
+            </article>
+        </section>
 
-    <hr />
 
-    <section class="skills">
-        <h2>Skills</h2>
-        <!-- <i class="fa-solid fa-circle-dot toggle-button"></i> -->
-        <button class="toggle-button">&#9650;</button>
-        <article>
-            <div>
-                <h5>skill 1</h5>
-                <h5>skill 2</h5>
-                <h5>skill 3</h5>
-                <h5>skill 4</h5>
-            </div>
-        </article>
     </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <script>
+        const { jsPDF } = window.jspdf;
+
+        function downloadResumeAsPDF() {
+
+            const doc = new jsPDF();
+
+            // Add content to the PDF from the resume section
+            const resumeSection = document.getElementById('resume_section');
+            if (!resumeSection) {
+                console.error('Resume section not found');
+                return;
+            }
+            doc.text(resumeSection.innerText, 10, 10);  // You can format this as you like
+
+            // Save the PDF
+            doc.save('resume.pdf');
+        }
+
+        // Add an event listener to your 'Download PDF' button
+        document.getElementById('download_pdf_btn').addEventListener('click', downloadResumeAsPDF);
+
+
+    </script>
 
     <script src="Script/index.js"></script>
 </body>
