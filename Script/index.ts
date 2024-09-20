@@ -169,7 +169,6 @@ document.addEventListener("DOMContentLoaded", () => {
       resumeForm.style.display = "block";
       resumeSection.style.display = "none";
 
-      // Pre-fill the form with the current values
       if (resumeForm && profilePictureInput && resumeProfilePicture) {
 
         resumeForm.addEventListener("submit", (event: Event) => {
@@ -323,7 +322,7 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("work-end-date")! as HTMLInputElement
       ).value;
 
-      // Update the resume display
+      //  resume display
       document.querySelector(".name h2")!.textContent = name;
       document.querySelector(".name p")!.textContent = additionalName;
       document.querySelector(".intro p")!.textContent = intro;
@@ -355,7 +354,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const generateURLBtn = document.getElementById("generate_url_btn")!;
   const urlDisplay = document.getElementById("resume_url_display")!;
 
-  // Initially hide the URL
   urlDisplay.style.display = "none";
 
   generateURLBtn.addEventListener("click", () => {
